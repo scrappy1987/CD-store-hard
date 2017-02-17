@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Book Store</title>
+
+    <!-- This -->
+    <script src="scripts/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+	<body>
+
+		<!--Text field writing to another area
+		<div>
+			Book: <input type="text" ng-model="book"> <br>
+			{{book}}	
+		</div> -->
+
+
+		<!--Tickbox shows hidden content
+		<div>
+			Shows Items <input type="checkbox" ng-model="isHidden" ng-value="false">
+
+			<div ng-hide="!isHidden">
+				<p>This is secret text <br>
+					This is also secret text</p>
+			</div>
+		</div> -->
+		
+	<div class="col-sm-12">
+			<h1>Header</h1>
+		<div class="col-sm-4">
+			Search: <input type="text" ng-model="book">
+		</div>	
+	</div>
+
+		<div class="container">
+	
+		<div class="col-sm-3">
+		<div class="hierachy">
+			Hierachy Example<br>
+			<input type="checkbox" ng-model="item1" ng-value="false"> Item 1 <br>
+			<div class="tier" ng-hide ="!item1">
+			
+			 	<input type="checkbox" ng-model="item11" ng-value="false"> Item 1-1 <br>
+				<div class="tier" ng-hide ="!item11">
+				- Content
+				</div>
+
+				<input type="checkbox" ng-model="item12" ng-value="false"> Item 1-2 <br>
+				<div class="tier" ng-hide ="!item12">
+				- Content
+				</div>
+
+				<input type="checkbox" ng-model="item13" ng-value="false"> Item 1-3 <br>
+				<div class="tier" ng-hide ="!item13">
+				- Content
+				</div>
+
+			</div>
+
+			<input type="checkbox" ng-model="item2" ng-value="false"> Item 2 <br>
+			<div class="tier" ng-hide ="!item2">
+
+				<input type="checkbox" ng-model="item21" ng-value="false"> Item 2-1 <br>
+				<div class="tier" ng-hide ="!item21">
+				- Content
+				</div>
+
+				<input type="checkbox" ng-model="item22" ng-value="false"> Item 2-2 <br>
+				<div class="tier" ng-hide ="!item22">
+				- Content
+				</div>
+
+				<input type="checkbox" ng-model="item23" ng-value="false"> Item 2-3 <br>
+				<div class="tier" ng-hide ="!item23">
+				- Content
+				</div>
+
+			</div>
+
+			<input type="checkbox" ng-model="item3" ng-value="false"> Item 3 <br>
+			<div class="tier" ng-hide ="!item3">
+
+				<input type="checkbox" ng-model="item31" ng-value="false"> Item 3-1 <br>
+				<div class="tier" ng-hide ="!item31">
+				- Content
+				</div>
+
+				<input type="checkbox" ng-model="item32" ng-value="false"> Item 3-2 <br>
+				<div class="tier" ng-hide ="!item32">
+				- Content
+				</div>
+
+				<input type="checkbox" ng-model="item33" ng-value="false"> Item 3-3 <br>
+				<div class="tier" ng-hide ="!item33">
+				- Content
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="col-sm-9">
+			main content?
+			{{book}} <br>
+
+			<img src="forest.jpeg">
+
+		</div>
+		</div>
+
+		<div class="col-sm-12">
+		<h1>Footer</h1>
+		</div>
+
+	</body>
+</html>
