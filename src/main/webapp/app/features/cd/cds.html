@@ -1,0 +1,26 @@
+<div ng-controller="cdController as ctrl">
+
+    <h1>CDs</h1>
+
+    Filter CDs <input type="text" ng-model="cdFilter.artist" placeholder="By Artist"> <input type="text" ng-model="cdFilter.song" placeholder="By Song">
+    <hr/>
+    <table class="table">
+        <tr>
+            <th ng-click="ctrl.doSort('artist')">Artist</th>
+            <th ng-click="ctrl.doSort('song')">Song</th>
+            <th ng-click="ctrl.doSort('genre')">Genre</th>
+        </tr>
+        <tr ng-repeat="cd in ctrl.cds | filter:cdFilter | orderBy:ctrl.sortBy:ctrl.reverse">
+            <td>{{cd.artist}}</td>
+            <td>{{cd.song}}</td>
+            <td>{{cd.genre}}</td>
+        </tr>
+    </table>
+    <hr/>
+    <hr/>
+    Add CD <input type="text" ng-model="cd.artist" placeholder="Artist"><input type="text" ng-model="cd.song" placeholder="Song"><input type="text" ng-model="cd.genre" placeholder="Genre">
+    <br/>
+    <button type="button" class="btn btn-primary" ng-model="newCD">Add</button>
+
+
+</div>
