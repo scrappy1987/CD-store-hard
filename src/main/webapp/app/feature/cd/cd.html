@@ -1,0 +1,19 @@
+<div ng-controller="CdController as ctrl">
+    <h2>Cd's</h2>
+    <br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Artist</th>
+            <th>Song</th>
+            <th>Genre</th>
+        </tr>
+        <tr ng-repeat="cd in ctrl.cds | filter:cdFilter | orderBy:ctrl.sortBy:ctrl.reverse">
+            <td>{{cd.id}}</td>
+            <td>{{cd.artist}}</td>
+            <td>{{cd.song}}</td>
+            <td>{{cd.genre}}</td>
+        </tr>
+    </table>
+    <button ng-click="ctrl.getSingleCd"> Search for Single CD</button>
+</div>
