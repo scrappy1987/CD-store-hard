@@ -33,6 +33,8 @@ public class CdServiceImpl implements CdService{
 		initCdStore();
 	}
 	
+	@Override
+	public String getCD(Integer id){ return "";} // meh
 
 	@Override
 	public String getAllCDs() {
