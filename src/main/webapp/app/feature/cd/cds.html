@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDs</title>
+</head>
+<body>
+
+<div ng-controller="CDController as ctrl">
+    <tr ng-repeat="cd in ctrl.cds">
+        <td>{{cd.id}}</td>
+        <td>{{cd.artist}}</td>
+        <td>{{cd.song}}</td>
+        <td>{{cd.genre}}</td>
+    </tr>
+
+    <ul ng-repeat="name in ctrl.list">
+        <li>{{name}}</li>
+    </ul>
+</div>
+
+</body>
+</html>
