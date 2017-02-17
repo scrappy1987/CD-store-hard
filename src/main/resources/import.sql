@@ -1,0 +1,1 @@
+insert into CDLibrary (id, artist, song, genre) values (0, 'Britney Spears', 'Stronger','Pop') 
