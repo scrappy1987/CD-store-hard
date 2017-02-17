@@ -1,0 +1,1 @@
+insert into CDStore (id, artist, song, genre) values (0, 'Adele', '25', 'Pop')
