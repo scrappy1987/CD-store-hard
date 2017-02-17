@@ -28,4 +28,9 @@ public class CDServiceDB implements CDService {
 		else 
 			return "";
 	}
+	
+	public String addCD(String cdJson) {
+		em.persist(helper.fromJson(cdJson, CD.class));
+		return cdJson;
+	}
 }
