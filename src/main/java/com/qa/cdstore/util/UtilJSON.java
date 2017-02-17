@@ -13,7 +13,7 @@ public class UtilJSON {
 		return gson.toJson(obj);
 	}
 	
-	public Object fromJson(String json, Object objClass) {
-		return gson.fromJson(json, objClass.getClass());
+	public <T> T fromJson(String json, Class<T> classType) {
+		return gson.fromJson(json, classType);
 	}
 }
