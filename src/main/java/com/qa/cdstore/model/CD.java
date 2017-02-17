@@ -27,6 +27,10 @@ public class CD {
 	@Size(max=250)
 	private String genre;
 	
+	public CD() {
+		
+	}
+	
 	public CD (int id, String artist, String song, String genre) {
 		this.id = id;
 		this.artist = artist;

@@ -25,6 +25,7 @@ public class CDServiceDB implements CDService {
 	@Inject
 	private UtilJSON helper;
 	
+	@Override
 	@SuppressWarnings("unchecked")
 	public String getCDs() {
 		List<CD> cds = (List<CD>) em.createQuery("SELECT cd FROM CD cd").getResultList();
@@ -35,6 +36,7 @@ public class CDServiceDB implements CDService {
 			return "";
 	}
 	
+	@Override
 	public String addCD(String cdJson) {
 		LOGGER.info("In ADD CD METHOD!!!!!!!!!!!!!");
 		em.persist(helper.fromJson(cdJson, CD.class));
