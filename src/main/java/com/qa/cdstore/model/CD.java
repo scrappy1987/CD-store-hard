@@ -1,10 +1,27 @@
 package com.qa.cdstore.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="library_cds")
 public class CD {
 	
+	@Id
+	@NotNull
+	@Column(name="id")
 	private int id;
+	
+	@NotNull
+	@Column(name="artist")
 	private String artist;
+	
+	@NotNull
+	@Column(name="song")
 	private String song;
+	
+	@NotNull
+	@Column(name="genre")
 	private String genre;
 	
 	public CD(int id, String artist, String song, String genre) {
