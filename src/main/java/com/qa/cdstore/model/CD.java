@@ -1,15 +1,30 @@
 package com.qa.cdstore.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="CD")
 public class CD {
 	
+	@Id
+	@NotNull
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	@NotNull
+	@Size(max=250)
 	private String artist;
+	
+	@NotNull
+	@Size(max=250)
 	private String song;
+	
+	@NotNull
+	@Size(max=250)
 	private String genre;
 	
 	public CD (int id, String artist, String song, String genre) {
