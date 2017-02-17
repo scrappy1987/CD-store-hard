@@ -20,6 +20,7 @@ public class CDServiceDB implements CDService {
 	@Inject
 	private UtilJSON helper;
 	
+	@SuppressWarnings("unchecked")
 	public String getCDs() {
 		List<CD> cds = (List<CD>) em.createQuery("SELECT cd FROM CD cd").getResultList();
 		if (cds != null)
