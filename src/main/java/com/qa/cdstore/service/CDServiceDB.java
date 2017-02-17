@@ -21,8 +21,7 @@ public class CDServiceDB implements CDService {
 	private UtilJSON helper;
 	
 	public String getCDs() {
-		List<CD> cds = new ArrayList<CD>();
-		cds = em.createQuery("SELECT cd FROM CD cd").getResultList();
+		List<CD> cds = (List<CD>) em.createQuery("SELECT cd FROM CD cd").getResultList();
 		if (cds != null)
 			return helper.toJson(cds);
 		else 
