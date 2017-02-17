@@ -30,10 +30,12 @@ public class DBCDServiceImp implements CDService {
 		initCDLibrary();
 	}
 	
+	@Override
 	public String getAllCDs() {
 		return util.getJSONForObject(cdMap.values());
 	}
 
+	@Override
 	public String addNewCD(String cdJson) {
 		ID++;
 		CD newCD = util.getObjectForJSON(cdJson, CD.class);
@@ -43,6 +45,7 @@ public class DBCDServiceImp implements CDService {
 		return cdJson;
 	}
 
+	@Override
 	public String replaceCD(Integer id, String updatedCD) {
 		CD newCD = util.getObjectForJSON(updatedCD,CD.class);
 		cdMap.put(id,newCD);
@@ -50,13 +53,14 @@ public class DBCDServiceImp implements CDService {
 		
 	}
 
+	@Override
 	public String deleteCD(Integer id) {
 		CD_LOGGER.info("Delete CD from map");
 		cdMap.remove(id);
 		CD_LOGGER.info("CD deleted successfully");
 		return "{\"message\": \"CD has been removed\"}";
 	}
-	
+
 	private void initCDLibrary() {
 		CD aCD = new CD(3,"Britney Spears", "Stronger","Pop");
 		cdMap.put(1, aCD);
