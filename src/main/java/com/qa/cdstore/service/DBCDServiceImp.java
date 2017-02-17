@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
@@ -13,7 +14,7 @@ import com.qa.cdstore.model.CD;
 import com.qa.cdstore.util.JSONUtil;
 
 @Stateless
-@Default
+@Alternative
 public class DBCDServiceImp implements CDService {
 
 	private static final Logger CD_LOGGER = Logger.getLogger(CDService.class);

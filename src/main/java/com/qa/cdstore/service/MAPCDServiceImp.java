@@ -24,7 +24,7 @@ public class MAPCDServiceImp implements CDService {
 	
 	@Override
 	public String getAllCDs() {
-		Query query = em.createQuery("SELECT c FROM cd c");
+		Query query = em.createQuery("SELECT c FROM CD c");
 		Collection<CD>cds = (Collection<CD>) query.getResultList();
 		return util.getJSONForObject(cds);
 	}
