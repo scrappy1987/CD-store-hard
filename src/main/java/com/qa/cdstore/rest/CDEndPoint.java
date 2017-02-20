@@ -32,7 +32,7 @@ public class CDEndPoint {
 	}
 	
 	@PUT
-	@Path("/json/id")
+	@Path("/json/{id}")
 	@Produces({"application/json"})
 	public String updateCDfromCDStore(@PathParam("id") Integer id, String cdJson){
 		return cdService.updateCD(id, cdJson);

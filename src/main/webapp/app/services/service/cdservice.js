@@ -14,8 +14,13 @@
         this.saveCD = function(cdToAdd)
         {
             return cdDal.saveCD(cdToAdd);
-        }
-    };
+        };
 
+        this.deleteCD = function(cdToRemove)
+        {
+            return cdDal.deleteCD(cdToRemove);
+        };
+    };
+    
     angular.module('cdStore').service('cdService', ['cdDal', CDService]);
 }());

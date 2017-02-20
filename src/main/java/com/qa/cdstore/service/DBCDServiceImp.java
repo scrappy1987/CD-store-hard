@@ -40,7 +40,7 @@ public class DBCDServiceImp implements CDService{
 	@Override
 	public String updateCD(Integer cdId, String jsonCDUpdated) {
 		CD updatingCD = util.getObjectForJSON(jsonCDUpdated, CD.class);
-		CD cd = findCD(new Long(cdId));
+		CD cd = findCD(cdId);
 		if (cd != null){
 			cd = updatingCD;
 			em.merge(cd);
@@ -50,14 +50,14 @@ public class DBCDServiceImp implements CDService{
 
 	@Override
 	public String deleteCD(Integer cdId) {
-		CD cd = findCD(new Long(cdId));
+		CD cd = findCD(cdId);
 		if(cd != null){
 			em.remove(cd);
 		}
 		return "{\"message\": \"cd successfully removed\"}";
 	}
 	
-	private CD findCD(Long id){
+	private CD findCD(Integer id){
 		return em.find(CD.class, id);
 	}
 	

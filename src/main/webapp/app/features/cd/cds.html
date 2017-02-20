@@ -14,13 +14,16 @@
             <td>{{cd.artist}}</td>
             <td>{{cd.song}}</td>
             <td>{{cd.genre}}</td>
+            <td><button type="button" class="btn btn-primary" ng-click = "ctrl.removeCD($index)"><span class="glyphicon glyphicon-remove"></span></button></td>
         </tr>
     </table>
     <hr/>
     <hr/>
-    Add CD <input type="text" ng-model="ctrl.newArtist" placeholder="Artist"><input type="text" ng-model="ctrl.newSong" placeholder="Song"><input type="text" ng-model="ctrl.newGenre" placeholder="Genre">
-    <br/>
-    <button type="button" class="btn btn-primary" ng-click = "ctrl.addNewCD()">Add</button>
-
-
+    <div class="container">
+        <h5> Add CD </h5>
+            <input type="text" ng-model="ctrl.newArtist" placeholder="Artist">
+            <input type="text" ng-model="ctrl.newSong" placeholder="Song">
+            <input type="text" ng-model="ctrl.newGenre" placeholder="Genre">
+            <button type="button" class="btn btn-primary" ng-click = "ctrl.addNewCD()">Add</button>
+    </div>
 </div>

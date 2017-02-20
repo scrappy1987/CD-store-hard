@@ -2,13 +2,16 @@ package com.qa.cdstore.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class CD {
 	
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name= "idGen", initialValue = 3)
+	@GeneratedValue(strategy= GenerationType.AUTO, generator="idGen")
 	private int id;
 	private String artist;
 	private String song;

@@ -22,7 +22,7 @@
         };
 
         this.deleteCD = function (cdToDelete) {
-            return dal.http.DELETE("/rest/cdstore/json/", cdToDelete);
+            return dal.http.DELETE("rest/cdstore/json/", cdToDelete);
         };
 
     }

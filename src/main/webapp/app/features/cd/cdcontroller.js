@@ -25,13 +25,30 @@
         vm.addNewCD = function()
         {
             var newCD = {
-                "artist" : vm.newArtist,
-                "song": vm.newSong,
-                "genre" : vm.newGenre
+                artist : vm.newArtist,
+                song: vm.newSong,
+                genre : vm.newGenre
             };
             console.log(newCD);
-            cdService.saveCD(newCD);
-            init();
+            cdService.saveCD(newCD).then(function() {
+                console.log("In cd controller about to add new cd data");
+                clearInput();
+                init();
+            }, function (error) {
+                vm.error = true;
+                vm.errorMessage = error;
+            });
+        };
+
+        vm.removeCD = function(index)
+        {
+            cdService.deleteCD(vm.cds[index]).then(function () {
+                console.log("In cd controller about to remove data");
+                init();
+            }, function (error) {
+                vm.error = true;
+                vm.errorMessage = error;
+            });
         };
 
         function init(){
@@ -42,6 +59,12 @@
                 vm.error = true;
                 vm.errorMessage = error;
             });
+        }
+
+        function clearInput(){
+            vm.newArtist = "";
+            vm.newSong = "";
+            vm.newGenre = "";
         }
 
         init();
