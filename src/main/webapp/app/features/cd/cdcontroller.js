@@ -22,11 +22,17 @@
 
         };
 
-        vm.addNewCD = function(artistName, songName, genreName)
+        vm.addNewCD = function()
         {
-
+            var newCD = {
+                "artist" : vm.newArtist,
+                "song": vm.newSong,
+                "genre" : vm.newGenre
+            };
+            console.log(newCD);
             cdService.saveCD(newCD);
-        }
+            init();
+        };
 
         function init(){
             cdService.getCDs().then(function (results) {

@@ -18,9 +18,9 @@
     </table>
     <hr/>
     <hr/>
-    Add CD <input type="text" ng-model="cd.artist" placeholder="Artist"><input type="text" ng-model="cd.song" placeholder="Song"><input type="text" ng-model="cd.genre" placeholder="Genre">
+    Add CD <input type="text" ng-model="ctrl.newArtist" placeholder="Artist"><input type="text" ng-model="ctrl.newSong" placeholder="Song"><input type="text" ng-model="ctrl.newGenre" placeholder="Genre">
     <br/>
-    <button type="button" class="btn btn-primary" ng-model="newCD">Add</button>
+    <button type="button" class="btn btn-primary" ng-click = "ctrl.addNewCD()">Add</button>
 
 
 </div>

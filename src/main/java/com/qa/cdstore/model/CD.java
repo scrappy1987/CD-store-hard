@@ -8,6 +8,7 @@ import javax.persistence.Id;
 public class CD {
 	
 	@Id
+	@GeneratedValue
 	private int id;
 	private String artist;
 	private String song;
@@ -17,12 +18,12 @@ public class CD {
 		
 	}
 	
-	public CD(int id, String artist, String song, String genre){
-		this.id = id;
+	public CD(String artist, String song, String genre){
 		this.artist = artist;
 		this.song = song;
 		this.genre = genre;
 	}
+	
 
 	public int getId() {
 		return id;

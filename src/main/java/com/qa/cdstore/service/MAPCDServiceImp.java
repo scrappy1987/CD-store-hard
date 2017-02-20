@@ -70,12 +70,12 @@ public class MAPCDServiceImp implements CDService{
 	}
 	
 	private void initCDStore() {
-		CD aCD = new CD(ID, "Infected Mushroom", "Suliman", "Goa-Trance");
-		cdMap.put(ID++, aCD);
-		aCD = new CD(ID, "Savant", "Protos", "Savant");
-		cdMap.put(ID++, aCD);
-		aCD = new CD(ID, "Avenged Sevenfold", "Avenged Sevenfold", "Metal");
-		cdMap.put(ID++, aCD);
+		CD aCD = new CD("Infected Mushroom", "Suliman", "Goa-Trance");
+		cdMap.put(aCD.getId(), aCD);
+		aCD = new CD("Savant", "Protos", "Savant");
+		cdMap.put(aCD.getId(), aCD);
+		aCD = new CD("Avenged Sevenfold", "Avenged Sevenfold", "Metal");
+		cdMap.put(aCD.getId(), aCD);
 	}
 	
 }
