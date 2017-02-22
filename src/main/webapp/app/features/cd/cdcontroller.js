@@ -10,6 +10,7 @@
         vm.sortBy = 'Artist';
         vm.reverse = false;
         vm.cds = [];
+        vm.isEditing = false;
 
         vm.doSort = function(propName)
         {
@@ -65,6 +66,10 @@
             vm.newArtist = "";
             vm.newSong = "";
             vm.newGenre = "";
+        }
+
+        function toggleEdit(){
+            vm.isEditing = !vm.isEditing;
         }
 
         init();

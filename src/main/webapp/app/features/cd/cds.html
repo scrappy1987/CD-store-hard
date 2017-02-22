@@ -14,7 +14,9 @@
             <td>{{cd.artist}}</td>
             <td>{{cd.song}}</td>
             <td>{{cd.genre}}</td>
-            <td><button type="button" class="btn btn-primary" ng-click = "ctrl.removeCD($index)"><span class="glyphicon glyphicon-remove"></span></button></td>
+            <td><button type="button" class="btn btn-danger" ng-click = "ctrl.removeCD($index)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button type="button" class="btn btn-primary" ng-class = "{true: 'btn-success', false: 'btn-primary'}[isEditing]" ng-click = "ctrl.toggleEdit()"><span ng-model = "editIcon" class="glyphicon glyphicon-edit" ng-class="{true: 'glyphicon glyphicon-ok', false: 'glyphicon glyphicon-edit'}[isEditing]"></span></button>
+            </td>
         </tr>
     </table>
     <hr/>
