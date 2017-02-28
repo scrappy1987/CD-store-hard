@@ -1,0 +1,31 @@
+<div ng-controller="cdController as ctrl">
+
+    <h1>CDs</h1>
+
+    Filter CDs <input type="text" ng-model="cdFilter.artist" placeholder="By Artist"> <input type="text" ng-model="cdFilter.song" placeholder="By Song">
+    <hr/>
+    <table class="table">
+        <tr>
+            <th ng-click="ctrl.doSort('artist')">Artist</th>
+            <th ng-click="ctrl.doSort('song')">Song</th>
+            <th ng-click="ctrl.doSort('genre')">Genre</th>
+        </tr>
+        <tr ng-repeat="cd in ctrl.cds | filter:cdFilter | orderBy:ctrl.sortBy:ctrl.reverse">
+            <td>{{cd.artist}}</td>
+            <td>{{cd.song}}</td>
+            <td>{{cd.genre}}</td>
+            <td><button type="button" class="btn btn-danger" ng-click = "ctrl.removeCD($index)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button type="button" class="btn btn-primary" ng-class = "{true: 'btn-success', false: 'btn-primary'}[isEditing]" ng-click = "ctrl.toggleEdit()"><span ng-model = "editIcon" class="glyphicon glyphicon-edit" ng-class="{true: 'glyphicon glyphicon-ok', false: 'glyphicon glyphicon-edit'}[isEditing]"></span></button>
+            </td>
+        </tr>
+    </table>
+    <hr/>
+    <hr/>
+    <div class="container">
+        <h5> Add CD </h5>
+            <input type="text" ng-model="ctrl.newArtist" placeholder="Artist">
+            <input type="text" ng-model="ctrl.newSong" placeholder="Song">
+            <input type="text" ng-model="ctrl.newGenre" placeholder="Genre">
+            <button type="button" class="btn btn-primary" ng-click = "ctrl.addNewCD()">Add</button>
+    </div>
+</div>
